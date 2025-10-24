@@ -2,8 +2,8 @@ package campesino.modelo.Roles;
 
 import javax.swing.JOptionPane;
 
-public class RolAdministrador extends Rol {
-    public RolAdministrador() {
+public class RolAdministrator extends Rol {
+    public RolAdministrator() {
         super("Administrador");
     }
 
