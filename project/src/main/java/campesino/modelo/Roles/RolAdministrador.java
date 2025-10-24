@@ -1,5 +1,7 @@
 package campesino.modelo.Roles;
 
+import javax.swing.JOptionPane;
+
 public class RolAdministrador extends Rol {
     public RolAdministrador() {
         super("Administrador");
@@ -7,6 +9,6 @@ public class RolAdministrador extends Rol {
 
     @Override
     public void mostrarPermisos() {
-        System.out.println("Permisos del Administrador: Acceso completo al sistema.");
+        JOptionPane.showMessageDialog(null, "Permisos del Administrador: Acceso completo al sistema.");
     }   
 }

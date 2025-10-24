@@ -31,4 +31,41 @@ public class Cuenta {
 
         rol.mostrarPermisos();
     }
+
+    public int getId_Cuenta() {
+        return id_Cuenta;
+    }
+    public void setId_Cuenta(int id_Cuenta) {
+        this.id_Cuenta = id_Cuenta;
+    }
+    public Rol getRol() {
+        return rol;
+    }
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+    public String getContraseña() {
+        return contraseña;
+    }
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+    public String getTelefono() {
+        return telefono;
+    }
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 }
