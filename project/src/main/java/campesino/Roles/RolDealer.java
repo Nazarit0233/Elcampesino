@@ -7,7 +7,7 @@ public class RolDealer extends Rol {
     
     // Constructor
     public RolDealer() {
-        super("Repartidor");
+        super("Dealer");
     }
 
     @Override

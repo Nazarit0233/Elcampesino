@@ -7,7 +7,7 @@ public class RolAdministrator extends Rol {
 
     // Constructor
     public RolAdministrator() {
-        super("Administrador");
+        super("Administrator");
     }
 
     @Override

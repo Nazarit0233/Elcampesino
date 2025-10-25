@@ -7,7 +7,7 @@ public class RolClient extends Rol {
     
     // Constructor
     public RolClient() {
-        super("Cliente");
+        super("Client");
     }
 
     @Override

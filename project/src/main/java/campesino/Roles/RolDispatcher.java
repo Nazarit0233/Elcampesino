@@ -7,7 +7,7 @@ public class RolDispatcher extends Rol {
     
     // Constructor
     public RolDispatcher() {
-        super("Despachador");
+        super("Dispatcher");
     }
 
     @Override

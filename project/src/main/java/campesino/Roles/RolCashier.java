@@ -7,7 +7,7 @@ public class RolCashier extends Rol {
 
     // Constructor
     public RolCashier() {
-        super("Cajero");
+        super("Cashier");
     }
 
     @Override
