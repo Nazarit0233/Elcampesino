@@ -1,4 +1,4 @@
-package campesino.modelo.Roles;
+package campesino.Roles;
 
 import javax.swing.JOptionPane;
 

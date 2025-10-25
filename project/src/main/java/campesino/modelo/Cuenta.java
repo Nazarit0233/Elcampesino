@@ -2,7 +2,7 @@ package campesino.modelo;
 
 import javax.swing.JOptionPane;
 
-import campesino.modelo.Roles.Rol;
+import campesino.Roles.Rol;
 
 public class Cuenta {
     private int id_Cuenta;

@@ -1,4 +1,4 @@
-package campesino.modelo.Roles;
+package campesino.Roles;
 
 public abstract class Rol {
     protected String nombre;

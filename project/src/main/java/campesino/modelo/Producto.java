@@ -12,7 +12,8 @@ public class Producto {
     }
 
     // Constructor con todos los campos (excepto id autogenerado)
-    public Producto(String nombre, double precio, int cantidad_disponible) {
+    public Producto(int id_stock, String nombre, double precio, int cantidad_disponible) {
+        this.id_stock = id_stock;  
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad_disponible = cantidad_disponible;

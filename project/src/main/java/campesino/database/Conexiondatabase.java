@@ -1,5 +1,6 @@
 package campesino.database;
 
+// Importaciones necesarias
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -8,14 +9,23 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 import javax.swing.JOptionPane;
 
+/**
+ * Clase para gestionar la conexión a la base de datos MySQL usando un archivo de propiedades.
+ * permite crear y cerrar la conexión de manera segura.
+ */
 public class ConexionDatabase {
-
+    //conexion unica (singleton)
     public static Connection connetion = null;
 
+    /**
+     * Obtiene la conexión a la base de datos. Si no existe, la crea usando el config.properties.
+     * @return La conexión a la base de datos.
+     */
     public static Connection getConnection() {
 
         Properties properties = new Properties();
@@ -23,12 +33,21 @@ public class ConexionDatabase {
         if (connetion == null) {
             try {
 
-                properties.load(new FileInputStream(new File("config.properties")));
+                // Cargar las propiedades desde el archivo config.properties
+                //properties.load(new FileInputStream(new File("config.properties"))); no se encuentra el archivo asi
 
+                InputStream input = ConexionDatabase.class.getClassLoader().getResourceAsStream("config.properties");
+            if (input == null) {
+                throw new FileNotFoundException("Archivo config.properties no encontrado en resources");
+            }
+            properties.load(input);
+
+                // Obtener los valores de las propiedades
                 String url = properties.getProperty("database.url");
                 String user = properties.getProperty("database.user");
                 String password = properties.getProperty("database.password");
 
+                // Establecer la conexión
                 connetion = DriverManager.getConnection(url, user, password);
                 JOptionPane.showMessageDialog(null, "Conexion exitosa a la base de datos.");
             } catch (SQLException e) {
@@ -43,6 +62,9 @@ public class ConexionDatabase {
         return connetion;
     }
 
+    /**
+     * Cierra la conexión a la base de datos si está abierta.
+     */
     public static void closeConnection() {
         if (connetion != null) {
             try {
