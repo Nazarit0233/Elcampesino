@@ -12,6 +12,11 @@ public class Cuenta {
     private String contraseña;
     private String telefono;
 
+    // Constructor vacío
+    public Cuenta() {
+    }
+
+    // Constructor con todos los campos (excepto id autogenerado)
     public Cuenta(Rol rol, String nombre, String correoElectronico, String contraseña, String telefono) {
         this.rol = rol;
         this.nombre = nombre;
@@ -21,6 +26,7 @@ public class Cuenta {
 
     }
 
+    // Constructor completo (por si se carga desde BD)
     public Cuenta(int id_Cuenta, Rol rol, String nombre, String correoElectronico, String contraseña, String telefono) {
         this.id_Cuenta = id_Cuenta;
         this.rol = rol;
@@ -41,6 +47,7 @@ public class Cuenta {
         rol.mostrarPermisos();
     }
 
+    // Getters y Setters
     public int getId_Cuenta() {
         return id_Cuenta;
     }
@@ -88,4 +95,18 @@ public class Cuenta {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    // Metodo toString (para mostrar en JoptionPane o consola)
+    @Override
+    public String toString() {
+        return "Cuenta{" +
+                "id_Cuenta=" + id_Cuenta +
+                ", rol=" + rol.getNombre() +
+                ", nombre='" + nombre + '\'' +
+                ", correoElectronico='" + correoElectronico + '\'' +
+                ", contraseña='" + contraseña + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
+
 }
