@@ -17,6 +17,7 @@ public class ControladorProducto {
     }
 
     // Métodos para gestionar productos
+    // Crear
     public void registrarProducto(int id_stock,String nombre, double precio, int cantidad_disponible) {
         try {
             dao.registrarProducto(new Producto(id_stock, nombre, precio, cantidad_disponible));
@@ -26,6 +27,7 @@ public class ControladorProducto {
         }
     }
 
+    // Actualizar
     public void actualizarProducto(int id_stock, String nombre, double precio, int cantidad_disponible ) {
         try {
             dao.actualizarProducto(new Producto( id_stock, nombre, precio, cantidad_disponible));
@@ -35,6 +37,7 @@ public class ControladorProducto {
         }
     }
 
+    // Eliminar
     public void eliminarProducto(int id) {
         try {
             dao.eliminarProducto(id);
@@ -44,6 +47,7 @@ public class ControladorProducto {
         }
     }
 
+    // Leer
     public List<Producto> listarProductos() {
         try {
             return dao.listarProductos();

@@ -17,6 +17,7 @@ public class ProductoDAO {
     }
 
     // Métodos CRUD para el producto
+    // Crear
     public void registrarProducto(Producto producto) throws SQLException {
         String sql = "INSERT INTO Producto (nombre, precio, cantidad_disponible) VALUES (?, ?, ?)";
         try (PreparedStatement ps = conexion.prepareStatement(sql)) {
@@ -27,6 +28,7 @@ public class ProductoDAO {
         }
     }
 
+    // Leer
     public List<Producto> listarProductos() throws SQLException {
         List<Producto> lista = new ArrayList<>();
         String sql = "SELECT * FROM Producto";
@@ -44,6 +46,7 @@ public class ProductoDAO {
         return lista;
     }
 
+    // Eliminar
     public void eliminarProducto(int id) throws SQLException {
         String sql = "DELETE FROM Producto WHERE id_producto = ?";
         try (PreparedStatement ps = conexion.prepareStatement(sql)) {
@@ -52,6 +55,7 @@ public class ProductoDAO {
         }
     }
 
+    // Actualizar
     public void actualizarProducto(Producto producto) throws SQLException {
         String sql = "UPDATE Producto SET id_stock=?, nombre=?, precio=?, cantidad_disponible=? WHERE id_producto=?";
         try (PreparedStatement ps = conexion.prepareStatement(sql)) {
