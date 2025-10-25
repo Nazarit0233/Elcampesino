@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,9 +31,7 @@ public class ConexionDatabase {
         if (connetion == null) {
             try {
 
-                // Cargar las propiedades desde el archivo config.properties
-                //properties.load(new FileInputStream(new File("config.properties"))); no se encuentra el archivo asi
-
+                // Cargar el archivo de propiedades desde resources
                 InputStream input = ConexionDatabase.class.getClassLoader().getResourceAsStream("config.properties");
             if (input == null) {
                 throw new FileNotFoundException("Archivo config.properties no encontrado en resources");
