@@ -1,24 +1,28 @@
 package campesino.dao;
 
+// Importaciones necesarias
 import campesino.modelo.Producto;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoDAO {
+    
+    // Conexion a la base de datos
     private Connection conexion;
 
+    // Constructor que recibe la conexión
     public ProductoDAO(Connection conexion) {
         this.conexion = conexion;
     }
 
+    // Métodos CRUD para el producto
     public void registrarProducto(Producto producto) throws SQLException {
-        String sql = "INSERT INTO Producto (id_stock, nombre, precio, cantidad_disponible) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO Producto (nombre, precio, cantidad_disponible) VALUES (?, ?, ?)";
         try (PreparedStatement ps = conexion.prepareStatement(sql)) {
-            ps.setInt(1, producto.getId_stock());
-            ps.setString(2, producto.getNombre());
-            ps.setDouble(3, producto.getPrecio());
-            ps.setInt(4, producto.getCantidad_disponible());
+            ps.setString(1, producto.getNombre());
+            ps.setDouble(2, producto.getPrecio());
+            ps.setInt(3, producto.getCantidad_disponible());
             ps.executeUpdate();
         }
     }

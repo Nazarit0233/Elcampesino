@@ -1,12 +1,16 @@
 package campesino.Roles;
 
 public abstract class Rol {
+    
+    // Atributo común
     protected String nombre;
 
+    // Constructor
     public Rol(String nombre) {
         this.nombre = nombre;
     }
 
+    // Getter del nombre del rol
     public String getNombre() {
         return nombre;
     }

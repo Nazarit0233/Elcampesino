@@ -1,5 +1,6 @@
 package campesino.vista;
 
+// Importaciones necesarias
 import campesino.controlador.ControladorProducto;
 import campesino.modelo.Producto;
 import javax.swing.*;
@@ -9,15 +10,18 @@ import java.util.List;
 
 public class AdministrarProductosView extends JFrame {
 
+    // Atributos
     private ControladorProducto controlador;
     private JTable tabla;
     private JTextField txtNombre, txtPrecio, txtCantidad, txtId;
 
+    // Constructor
     public AdministrarProductosView(ControladorProducto controlador) {
         this.controlador = controlador;
         inicializar();
     }
 
+    // Método para inicializar la interfaz gráfica
     private void inicializar() {
         setTitle("Gestión de Productos - Carnes y Pollos El Campesino (MySQL)");
         setSize(700, 500);
@@ -28,9 +32,9 @@ public class AdministrarProductosView extends JFrame {
         JPanel panelFormulario = new JPanel(new GridLayout(5, 2, 5, 5));
         panelFormulario.setBorder(BorderFactory.createTitledBorder("Datos del Producto"));
 
+        // Campos modificables del producto
         panelFormulario.add(new JLabel("ID:"));
         txtId = new JTextField();
-        txtId.setEnabled(false);
         panelFormulario.add(txtId);
 
         panelFormulario.add(new JLabel("Nombre:"));
@@ -53,6 +57,7 @@ public class AdministrarProductosView extends JFrame {
         JButton btnEliminar = new JButton("Eliminar");
         JButton btnRefrescar = new JButton("Refrescar");
 
+        // Botones de acción
         panelBotones.add(btnRegistrar);
         panelBotones.add(btnActualizar);
         panelBotones.add(btnEliminar);

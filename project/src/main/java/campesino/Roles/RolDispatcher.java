@@ -1,8 +1,11 @@
 package campesino.Roles;
 
+// Importaciones necesarias
 import javax.swing.JOptionPane;
 
 public class RolDispatcher extends Rol {
+    
+    // Constructor
     public RolDispatcher() {
         super("Despachador");
     }

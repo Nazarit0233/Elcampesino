@@ -1,6 +1,8 @@
 package campesino.modelo;
 
 public class Producto {
+    
+    // Atributos
     private int id_producto;
     private int id_stock;
     private String nombre;

@@ -1,5 +1,6 @@
 package campesino.controlador;
 
+// Importaciones necesarias
 import campesino.dao.ProductoDAO;
 import campesino.modelo.Producto;
 import javax.swing.*;
@@ -10,10 +11,12 @@ import java.util.List;
 public class ControladorProducto {
     private ProductoDAO dao;
 
+    // Constructor del controlador que recibe la conexión a la base de datos
     public ControladorProducto(Connection conexion) {
         dao = new ProductoDAO(conexion);
     }
 
+    // Métodos para gestionar productos
     public void registrarProducto(int id_stock,String nombre, double precio, int cantidad_disponible) {
         try {
             dao.registrarProducto(new Producto(id_stock, nombre, precio, cantidad_disponible));

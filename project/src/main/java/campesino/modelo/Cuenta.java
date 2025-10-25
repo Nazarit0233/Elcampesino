@@ -1,7 +1,7 @@
 package campesino.modelo;
 
+// Importaciones necesarias
 import javax.swing.JOptionPane;
-
 import campesino.Roles.Rol;
 
 public class Cuenta {
@@ -37,6 +37,7 @@ public class Cuenta {
 
     }
 
+    // Método para mostrar la información de la cuenta
     public void mostrarInfoCuenta() {
         JOptionPane.showMessageDialog(null, "ID cuenta: " + id_Cuenta +
                 "\nUsuario: " + nombre +
@@ -95,18 +96,5 @@ public class Cuenta {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
-    // Metodo toString (para mostrar en JoptionPane o consola)
-    @Override
-    public String toString() {
-        return "Cuenta{" +
-                "id_Cuenta=" + id_Cuenta +
-                ", rol=" + rol.getNombre() +
-                ", nombre='" + nombre + '\'' +
-                ", correoElectronico='" + correoElectronico + '\'' +
-                ", contraseña='" + contraseña + '\'' +
-                ", telefono='" + telefono + '\'' +
-                '}';
-    }
-
+    
 }
