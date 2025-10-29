@@ -3,11 +3,11 @@ package campesino.Roles;
 // Importaciones necesarias
 import javax.swing.JOptionPane;
 
-public class RolDealer extends Rol {
+public class RolDelivery extends Rol {
     
     // Constructor
-    public RolDealer() {
-        super("Dealer");
+    public RolDelivery() {
+        super("Delivery");
     }
 
     @Override

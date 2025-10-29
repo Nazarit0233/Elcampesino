@@ -18,7 +18,7 @@ public class CuentaDAO {
 
     // Métodos CRUD para la cuenta
     // Crear
-    public void registrarCuenta(Cuenta cuenta) throws SQLException {
+    public void crearCuenta(Cuenta cuenta) throws SQLException {
         String sql = "INSERT INTO Cuenta ( rol, nombre, correoElectronico, contraseña, telefono ) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement ps = conexion.prepareStatement(sql)) {
             ps.setString(1, cuenta.getRol().getNombre());
@@ -85,7 +85,7 @@ public class CuentaDAO {
         } else if (nombreRol.equals("Dispatcher")) {
             return new campesino.Roles.RolDispatcher();
         } else if (nombreRol.equals("Dealer")) {
-            return new campesino.Roles.RolDealer();
+            return new campesino.Roles.RolDelivery();
         } else {
             return null; // O lanzar una excepción si el rol no es válido
         }

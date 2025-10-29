@@ -1,5 +1,5 @@
 package campesino.vista;
 
-public class Mainview {
+public class Deliveryview {
     
 }

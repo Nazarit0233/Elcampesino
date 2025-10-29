@@ -1,4 +1,4 @@
-package campesino.controlador;
+package campesino.controller;
 
 // Importaciones necesarias
 import campesino.dao.ProductoDAO;
@@ -8,11 +8,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public class ControladorProducto {
+public class ControllerProducto {
     private ProductoDAO dao;
 
     // Constructor del controlador que recibe la conexión a la base de datos
-    public ControladorProducto(Connection conexion) {
+    public ControllerProducto(Connection conexion) {
         dao = new ProductoDAO(conexion);
     }
 
