@@ -1,10 +1,11 @@
 package campesino.vista;
 
-import javax.swing.*;
+// Importaciones necesarias
 
 import campesino.controller.*;
-import campesino.modelo.Cuenta;
-
+import campesino.modelo.*;
+import campesino.vista.*;
+import javax.swing.*;
 import java.awt.*;
 
 public class CreateAccount extends JFrame {

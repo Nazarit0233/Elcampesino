@@ -1,6 +1,6 @@
 package campesino.vista;
 
-import campesino.controller.ControllerProducto;
+import campesino.controller.ProductoController;
 import campesino.modelo.Producto;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -10,12 +10,12 @@ import java.util.List;
 public class AdministrarProductosView extends JFrame {
 
     // Atributos
-    private ControllerProducto controlador;
+    private ProductoController controlador;
     private JTable tabla;
     private JTextField txtNombre, txtPrecio, txtCantidad, txtId;
 
     // Constructor
-    public AdministrarProductosView(ControllerProducto controlador) {
+    public AdministrarProductosView(ProductoController controlador) {
         this.controlador = controlador;
         inicializar();
     }

@@ -39,13 +39,12 @@ public class CuentaDAO {
                 // Aquí deberías mapear el rol correctamente según tu implementación
                 Rol rol = obtenerRolDesdeNombre(rs.getString("rol"));
                 lista.add(new Cuenta(
-                    rs.getInt("id_Cuenta"),
-                    rol,
-                    rs.getString("nombre"),
-                    rs.getString("correoElectronico"),
-                    rs.getString("contraseña"),
-                    rs.getString("telefono")
-                ));
+                        rs.getInt("id_Cuenta"),
+                        rol,
+                        rs.getString("nombre"),
+                        rs.getString("correoElectronico"),
+                        rs.getString("contraseña"),
+                        rs.getString("telefono")));
             }
         }
         return lista;
@@ -89,6 +88,5 @@ public class CuentaDAO {
         } else {
             return null; // O lanzar una excepción si el rol no es válido
         }
-
-}
+    }
 }

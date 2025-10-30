@@ -16,6 +16,12 @@ public class Cuenta {
     public Cuenta() {
     }
 
+    public Cuenta(String rol, String nombre, String contraseña) {
+        this.rol = null; // Asignar el rol adecuadamente según tu lógica
+        this.nombre = nombre;
+        this.contraseña = contraseña;
+    }
+
     // Constructor con todos los campos (excepto id autogenerado)
     public Cuenta(Rol rol, String nombre, String correoElectronico, String contraseña, String telefono) {
         this.rol = rol;

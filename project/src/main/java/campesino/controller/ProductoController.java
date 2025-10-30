@@ -8,11 +8,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public class ControllerProducto {
+public class ProductoController {
     private ProductoDAO dao;
 
     // Constructor del controlador que recibe la conexión a la base de datos
-    public ControllerProducto(Connection conexion) {
+    public ProductoController(Connection conexion) {
         dao = new ProductoDAO(conexion);
     }
 
