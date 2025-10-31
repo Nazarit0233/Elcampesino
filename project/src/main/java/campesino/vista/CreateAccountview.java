@@ -3,8 +3,6 @@ package campesino.vista;
 // Importaciones necesarias
 
 import campesino.controller.*;
-import campesino.modelo.*;
-import campesino.vista.*;
 import campesino.Roles.*;
 import javax.swing.*;
 import java.awt.*;

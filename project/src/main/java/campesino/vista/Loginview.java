@@ -19,7 +19,6 @@ public class Loginview extends JFrame {
     private static final String ROLE_CASHIER = "Cashier";
     private static final String ROLE_DISPATCHER = "Dispatcher";
 
-    private CuentaDAO cuentaDAO;
     private JTextField txtCuenta;
     private JPasswordField txtContraseña;
     private JButton btnLogin;
@@ -65,11 +64,10 @@ public class Loginview extends JFrame {
         btnCrearCuenta.addActionListener(e -> {
             try {
                 // Obtener la conexión usando tu clase de conexión a base de datos
-                ConexionDatabase conexion = new ConexionDatabase();
-                Connection conn = conexion.getConnection();
+                Connection conexion = ConexionDatabase.getConnection(); ;
                 
                 // Crear controlador y vista
-                CreateAccountController createController = new CreateAccountController(conn);
+                CreateAccountController createController = new CreateAccountController(conexion);
                 CreateAccountview createAccountView = new CreateAccountview(createController);
                 
                 // Mostrar la vista y ocultar el login
