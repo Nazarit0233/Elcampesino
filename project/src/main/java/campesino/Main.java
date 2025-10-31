@@ -1,5 +1,8 @@
 package campesino;
 
+// Importaciones necesarias
+import campesino.database.*;
+import campesino.modelo.*;
 import campesino.controller.*;
 import campesino.vista.*;
 
@@ -9,14 +12,29 @@ public class Main {
     public static void main(String[] args) {
         Connection conexion = campesino.database.ConexionDatabase.getConnection();
         /* 
-        ControladorProducto controlador = new ControladorProducto(conexion);
+        ProductoController productoController = new ProductoController(conexion);
 
-        
-        AdministrarProductosView vista = new AdministrarProductosView(controlador);
+        AdministrarProductosView vista = new AdministrarProductosView(productoController);
         vista.setVisible(true);
         */
 
-        Principalview principalView = new Principalview();
+        LoginController loginController = new LoginController(conexion);
+
+        Loginview vista = new Loginview(loginController);
+        vista.setVisible(true);
+
+        /* 
+        PrincipalController principalController = new PrincipalController();
+        
+        Principalview principalView = new Principalview(principalController);
         principalView.setVisible(true);
+        
+        
+
+        CreateAccountController createAccountController = new CreateAccountController(conexion);
+
+        CreateAccountview createAccountView = new CreateAccountview(createAccountController);
+        createAccountView.setVisible(true);
+        */
     }
 }

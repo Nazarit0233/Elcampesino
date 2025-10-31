@@ -75,18 +75,21 @@ public class CuentaDAO {
 
     // Método auxiliar para obtener el rol desde su nombre
     private Rol obtenerRolDesdeNombre(String nombreRol) {
-        if (nombreRol.equals("Administrator")) {
-            return new campesino.Roles.RolAdministrator();
-        } else if (nombreRol.equals("Client")) {
-            return new campesino.Roles.RolClient();
-        } else if (nombreRol.equals("Cashier")) {
-            return new campesino.Roles.RolCashier();
-        } else if (nombreRol.equals("Dispatcher")) {
-            return new campesino.Roles.RolDispatcher();
-        } else if (nombreRol.equals("Dealer")) {
-            return new campesino.Roles.RolDelivery();
-        } else {
-            return null; // O lanzar una excepción si el rol no es válido
+        // Implementa la lógica para mapear el nombre del rol a su objeto correspondiente
+        // Esto dependerá de cómo tengas implementados los roles en tu proyecto
+        switch (nombreRol) {
+            case "Administrator":
+                return new campesino.Roles.RolAdministrator();
+            case "Cashier":
+                return new campesino.Roles.RolCashier();
+            case "Client":
+                return new campesino.Roles.RolClient();
+            case "Delivery":
+                return new campesino.Roles.RolDelivery();
+            case "Dispatcher":
+                return new campesino.Roles.RolDispatcher();
+            default:
+                throw new IllegalArgumentException("Rol desconocido: " + nombreRol);
         }
     }
 }

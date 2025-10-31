@@ -47,27 +47,29 @@ public class AdministrarProductosView extends JFrame {
         panelFormulario.add(new JLabel("Cantidad:"));
         txtCantidad = new JTextField();
         panelFormulario.add(txtCantidad);
-
         add(panelFormulario, BorderLayout.NORTH);
 
+        // Panel de botones
         JPanel panelBotones = new JPanel();
         JButton btnRegistrar = new JButton("Registrar");
         JButton btnActualizar = new JButton("Actualizar");
         JButton btnEliminar = new JButton("Eliminar");
         JButton btnRefrescar = new JButton("Refrescar");
 
-        // Botones de acción
+        // Agregar acciones a los botones
         panelBotones.add(btnRegistrar);
         panelBotones.add(btnActualizar);
         panelBotones.add(btnEliminar);
         panelBotones.add(btnRefrescar);
         add(panelBotones, BorderLayout.SOUTH);
 
+        // Tabla para mostrar productos
         tabla = new JTable();
         JScrollPane scroll = new JScrollPane(tabla);
         add(scroll, BorderLayout.CENTER);
         cargarTabla();
 
+        // Acciones de los botones
         btnRegistrar.addActionListener(e -> {
             controlador.registrarProducto(Integer.parseInt(txtId.getText()),
                     txtNombre.getText(),
@@ -102,6 +104,7 @@ public class AdministrarProductosView extends JFrame {
         });
     }
 
+    // Método para cargar los productos en la tabla
     private void cargarTabla() {
         List<Producto> lista = controlador.listarProductos();
         String[] columnas = {"ID", "Nombre", "Precio", "Cantidad"};
