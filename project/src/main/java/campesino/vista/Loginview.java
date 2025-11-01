@@ -68,7 +68,7 @@ public class Loginview extends JFrame {
                 
                 // Crear controlador y vista
                 CreateAccountController createController = new CreateAccountController(conexion);
-                CreateAccountview createAccountView = new CreateAccountview(createController);
+                CreateAccountviewswing createAccountView = new CreateAccountviewswing(createController);
                 
                 // Mostrar la vista y ocultar el login
                 createAccountView.setVisible(true);

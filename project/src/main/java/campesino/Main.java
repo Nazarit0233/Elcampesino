@@ -1,8 +1,6 @@
 package campesino;
 
 // Importaciones necesarias
-import campesino.database.*;
-import campesino.modelo.*;
 import campesino.controller.*;
 import campesino.vista.*;
 
@@ -16,25 +14,27 @@ public class Main {
 
         AdministrarProductosView vista = new AdministrarProductosView(productoController);
         vista.setVisible(true);
-        */
+        
 
         LoginController loginController = new LoginController(conexion);
 
         Loginview vista = new Loginview(loginController);
         vista.setVisible(true);
 
-        /* 
+        
         PrincipalController principalController = new PrincipalController();
         
         Principalview principalView = new Principalview(principalController);
         principalView.setVisible(true);
-        
+        */
         
 
         CreateAccountController createAccountController = new CreateAccountController(conexion);
 
-        CreateAccountview createAccountView = new CreateAccountview(createAccountController);
-        createAccountView.setVisible(true);
-        */
+        CreateAccountViewFX createAccountView = new CreateAccountViewFX(createAccountController);
+        
+
+        createAccountView.launch();
+        
     }
 }

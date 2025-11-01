@@ -24,12 +24,11 @@ public class Cuenta {
 
     // Constructor con todos los campos (excepto id autogenerado)
     public Cuenta(Rol rol, String nombre, String correoElectronico, String contraseña, String telefono) {
-        this.rol = rol;
         this.nombre = nombre;
-        this.correoElectronico = correoElectronico;
         this.contraseña = contraseña;
+        this.rol = rol;
+        this.correoElectronico = correoElectronico;
         this.telefono = telefono;
-
     }
 
     // Constructor completo (por si se carga desde BD)
@@ -102,5 +101,5 @@ public class Cuenta {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+
 }

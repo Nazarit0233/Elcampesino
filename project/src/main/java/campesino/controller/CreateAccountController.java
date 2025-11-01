@@ -13,6 +13,10 @@ public class CreateAccountController {
         this.dao = new CuentaDAO(conexion);
     }
 
+    public CreateAccountController() {
+        // Constructor por defecto si es necesario
+    }
+
     public void registrarCuenta(Cuenta cuenta) {
         try {
             dao.crearCuenta(cuenta);

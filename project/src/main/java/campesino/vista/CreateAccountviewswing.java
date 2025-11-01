@@ -1,37 +1,47 @@
 package campesino.vista;
 
 // Importaciones necesarias
-
 import campesino.controller.*;
 import campesino.Roles.*;
 import javax.swing.*;
 import java.awt.*;
 
-public class CreateAccountview extends JFrame {
+public class CreateAccountviewswing extends JFrame {
 
     private JTextField txtCuenta;
     private JPasswordField txtContraseña;
     private JComboBox<String> comboRol;
+    private JTextField txtCorreElectronico;
+    private JTextField txtTelefono;
     private JButton btnCrear;
 
-    public CreateAccountview(CreateAccountController controller) {
-        setTitle("Crear Cuenta");
-        setSize(400, 300);
+    public CreateAccountviewswing(CreateAccountController controller) {
+        
+        setSize(700, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
+        
 
         // Credenciales de nueva cuenta
-        JPanel panelFormulario = new JPanel(new GridLayout(4, 2, 10, 10));
+        JPanel panelFormulario = new JPanel(new GridLayout(0, 2, 10, 10));
         panelFormulario.setBorder(BorderFactory.createTitledBorder("Ingrese los datos de la nueva cuenta"));
         
-        panelFormulario.add(new JLabel("Cuenta (correo):"));
+        panelFormulario.add(new JLabel("Nombre:"));
         txtCuenta = new JTextField();
         panelFormulario.add(txtCuenta);
 
         panelFormulario.add(new JLabel("Contraseña:"));
         txtContraseña = new JPasswordField();
         panelFormulario.add(txtContraseña);
+
+        panelFormulario.add(new JLabel("Correo:"));
+        txtCorreElectronico = new JTextField();
+        panelFormulario.add(txtCorreElectronico);
+
+        panelFormulario.add(new JLabel("Teléfono:"));
+        txtTelefono = new JTextField();
+        panelFormulario.add(txtTelefono);
 
         panelFormulario.add(new JLabel("Rol:"));
         comboRol = new JComboBox<>(new String[]{"Administrator", "Cashier", "Client", "Delivery", "Dispatcher"});
@@ -51,6 +61,8 @@ public class CreateAccountview extends JFrame {
             String cuenta = txtCuenta.getText().trim();
             String contraseña = new String(txtContraseña.getPassword()).trim();
             String rolSeleccionado = (String) comboRol.getSelectedItem();
+            String correo = txtCorreElectronico.getText().trim();
+            String telefono = txtTelefono.getText().trim();
 
             // Mapear nombre de rol a objeto Rol
             Rol rolObj;
@@ -79,8 +91,14 @@ public class CreateAccountview extends JFrame {
                 return;
             }
 
-            // Construir Cuenta con Rol (uso correo como nombre y correo; teléfono vacío)
-            campesino.modelo.Cuenta nuevaCuenta = new campesino.modelo.Cuenta(rolObj, cuenta, cuenta, contraseña, "");
+            // Crear nueva cuenta y llamar al controlador
+            campesino.modelo.Cuenta nuevaCuenta = new campesino.modelo.Cuenta(
+                rolObj,
+                cuenta,
+                correo,
+                contraseña,
+                telefono
+            );
             controller.registrarCuenta(nuevaCuenta);
         });
     }
