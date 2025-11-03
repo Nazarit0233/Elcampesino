@@ -1,10 +1,10 @@
-package campesino.vista;
+package campesino.vista.vistaSwing;
 
 import javax.swing.JFrame;
 
-public class Clientview extends JFrame {
-    public Clientview() {
-        setTitle("Vista del Cliente");
+public class Dispatcherview extends JFrame {
+    public Dispatcherview() {
+        setTitle("Vista del Despachador");
         setSize(800, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

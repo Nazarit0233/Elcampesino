@@ -1,4 +1,4 @@
-package campesino.vista;
+package campesino.vista.vistaSwing;
 
 import campesino.controller.ProductoController;
 import campesino.modelo.Producto;

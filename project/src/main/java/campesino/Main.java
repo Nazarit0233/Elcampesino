@@ -6,6 +6,7 @@ import campesino.modelo.*;
 import campesino.controller.*;
 import campesino.vista.*;
 
+
 import java.sql.Connection;
 
 public class Main {
@@ -30,6 +31,7 @@ public class Main {
         principalView.setVisible(true);
         
         
+        /*
 
         CreateAccountController createAccountController = new CreateAccountController(conexion);
 
