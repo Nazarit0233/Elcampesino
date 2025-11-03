@@ -2,8 +2,8 @@ package campesino.vista.vistaSwing;
 
 import campesino.controller.ProductoController;
 import campesino.modelo.Producto;
-import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 

@@ -18,11 +18,14 @@ public class PedidoDAO {
     // Aquí irían los métodos CRUD para la entidad Pedido
     // Crear
     public void registrarPedido(Pedido pedido) throws SQLException {
-        String sql = "INSERT INTO Pedido (id_Cuenta, fecha, total) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO Pedido (id_Cuenta, id_Estado_Pedido, Fecha_Pedido, Total_Pedido, Metodo_Pago, Direccion_Entrega) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement ps = conexion.prepareStatement(sql)) {
             ps.setInt(1, pedido.getid_Cliente());
-            ps.setDate(2, new java.sql.Date(pedido.getFechaPedido().getTime()));
-            ps.setDouble(3, pedido.getTotalPedido());
+            ps.setInt(2, pedido.getid_Estado_Pedido());
+            ps.setTimestamp(3, pedido.getFechaPedido());
+            ps.setDouble(4, pedido.getTotalPedido());
+            ps.setString(5, pedido.getMetodoPago());
+            ps.setString(6, pedido.getDireccionEntrega());
             ps.executeUpdate();
         }
     }
@@ -37,10 +40,10 @@ public class PedidoDAO {
                     rs.getInt("id_Pedido"),
                     rs.getInt("id_Cliente"),
                     rs.getInt("id_Estado_Pedido"),
-                    rs.getTimestamp("fechaPedido"),
-                    rs.getDouble("totalPedido"),
-                    rs.getString("metodoPago"),
-                    rs.getString("direccionEntrega")
+                    rs.getTimestamp("Fecha_Pedido"),
+                    rs.getDouble("Total_Pedido"),
+                    rs.getString("Metodo_Pago"),
+                    rs.getString("Direccion_Entrega")
                 ));
             }
         }

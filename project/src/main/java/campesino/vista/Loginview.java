@@ -131,7 +131,7 @@ public class Loginview extends JFrame {
 
     private JFrame crearVistaPorRol(String rolNombre) {
         return switch (rolNombre) {
-            case ROLE_ADMIN -> new Principalview();
+            case ROLE_ADMIN -> new Adminview();
             case ROLE_CLIENT -> new Clientview();
             case ROLE_DELIVERY -> new Deliveryview();
             case ROLE_CASHIER -> new Cashierview();

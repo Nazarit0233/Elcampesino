@@ -1,7 +1,6 @@
-package campesino.vista.vistaFx;
+/*package campesino.vista.vistaFx;
 
 // Importaciones necesarias
-
 import campesino.Roles.*;
 import campesino.controller.*;
 import campesino.modelo.Cuenta;
@@ -138,3 +137,4 @@ public class CreateAccountViewFX extends Application {
         Application.launch(CreateAccountViewFX.class);
     }
 }
+*/

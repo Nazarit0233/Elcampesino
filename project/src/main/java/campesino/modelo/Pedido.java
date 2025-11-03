@@ -17,8 +17,14 @@ public class Pedido {
     }
 
     //  Constructor con todos los campos (excepto id autogenerado)
-    public Pedido(int id_Cliente, int id_Estado_Pedido, double totalPedido,
-            String metodoPago, String direccionEntrega) {
+    public Pedido(
+        int id_Cliente,
+        int id_Estado_Pedido,
+        Timestamp fechaPedido,
+        double totalPedido,
+        String metodoPago,
+        String direccionEntrega) {
+            
         this.id_Cliente = id_Cliente;
         this.id_Estado_Pedido = id_Estado_Pedido;
         this.fechaPedido = new Timestamp(System.currentTimeMillis());
@@ -28,8 +34,15 @@ public class Pedido {
     }
 
     //  Constructor completo (por si se carga desde BD)
-    public Pedido(int id_Pedido, int id_Cliente, int id_Estado_Pedido, Timestamp fechaPedido,
-            double totalPedido, String metodoPago, String direccionEntrega) {
+    public Pedido(
+        int id_Pedido,
+        int id_Cliente,
+        int id_Estado_Pedido,
+        Timestamp fechaPedido,
+        double totalPedido,
+        String metodoPago,
+        String direccionEntrega) {
+            
         this.id_Pedido = id_Pedido;
         this.id_Cliente = id_Cliente;
         this.id_Estado_Pedido = id_Estado_Pedido;
